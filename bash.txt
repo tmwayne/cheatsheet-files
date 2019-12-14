@@ -1,0 +1,57 @@
+
+      ## File manipulation
+      Create a tarball .................... tar -cvzf file.tar.gz file
+      Extract a tarball ................... tar -xvzf file.tar.gz
+      Diff files in vim ................... vimdiff file1 file2
+      Create soft symbolic link ........... ln -s file link
+      Explain filesystem hierarchy ........ man hier
+      Print file information .............. file <file>
+
+      ## Find files
+      Search man pages for pattern ........ apropos <pattern>
+      Find binaries in path ............... which <package>
+      Find a package outside of path ...... whereis <package>
+      Find file using filesystem index .... locate <filename>
+
+      ## Package management
+      Uninstall a package completely ...... sudo apt-get purge <package>
+      List installed packages ............. apt list --installed
+
+      ## Processes
+      List running jobs ................... ps -auxf
+      Disassociate job from terminal ...... nohup command &>/dev/null &
+      System trace a program .............. strace <proc>
+      Edit crontab ........................ crontab -e
+      Print crontab to console ............ crontab -l
+
+      ## Networking
+      IPv4 ports .......................... lsof -Pnl +m -i4
+      List services listening to ports .... sudo netstat -plunt
+      Capture packets being transferred ... tcpdump
+      View visible interfaces ............. ip addr show
+
+      ## Services
+      List all SysV services .............. service --status-all
+      List all systemd services ........... systemctl list-units --type=service
+      Display systemd log by executable ... systemctl /path/to/exc
+
+      ## Computer specs
+      Print various hardware info ......... uname -a
+      Show memory use ..................... free -h
+      Show disk usage ..................... du -sh
+      Show disk availability .............. df -h
+      Show CPU specs ...................... cat /proc/cpuinfo
+      Show memory specs ................... cat /proc/meminfo
+      Show disk stats ..................... cat /proc/diskstats
+      Show other hardware info ............ dmidecode
+
+      ## SSH
+      Create new key ...................... ssh-keygen -b 2048 -t rsa
+      Add key to agent .................... ssh-add <key>
+      Copy public key to vm ............... ssh-copy-id user@remote
+
+      ## Misc
+      Open last command in editor ......... fc
+
+      ## C
+      List C packages ..................... pkg-config --list-all

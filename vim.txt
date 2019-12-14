@@ -1,0 +1,325 @@
+######################################################################
+### VIM COMMANDS:
+######################################################################
+
+<C-w> : delete word in insert model
+<C-u> : delete line in insert model
+<C-v>{1234} : insert non-keyboard character
+<C-k>{x1}{x2} : insert non-keyboard character
+:digraphs : view digraphs and codes for all characters
+:tabnew {file?}: open new tab, optionally with file
+gt : go to next tab
+gT : go to prev tab
+gU : make letters uppercase
+gu : make letters lowercase
+<C-o> : insert normal mode
+zz : center line in console
+f{letter} : jump to start of next instance of letter
+* : go to next instance of word
+# : go to previous instance of word
+J : join current line and next line
+
+
+######################################################################
+### EX COMMAND:
+######################################################################
+
+:j : join current line and next line
+:/{pattern1}/,/{pattern2} : specify range by pattern
+:m {address} : move a range to specified line (or :move {a})
+:t {address} : copy a range to a specified address (or :copy {a})
+@: : repeat the last Ex command
+:{command}<C-d> : suggests suitable matches to command
+:<C-r><C-w> : copy word under curse to command-line prompt
+q: : open command line window with history of Ex commands
+q/ open command line window with history of searches
+:q : close command line window
+:shell : start interactive shell window
+(NOTE: we can use bash's Ctrl-z to return to shell by suspending job
+    and fg to resume the suspended job)
+!G : to pre-populate range with current line to end of file (:.,$!)
+:match {group} /pattern/ : highlight	
+:abbreviate : set abbreviation
+
+
+######################################################################
+### FILE COMMANDS:
+######################################################################
+
+:ls : view buffer
+:args : view argument list
+:set hidden : prevent VIM from flagging a modified buffer when switching
+:argdo : apply a command to every arg
+:bufdo : apply a command to every buf
+:bdelete N1 N2 : delete buffers 1 and 2
+:e. : open netrw file browser
+
+
+######################################################################
+### JUMP COMMANDS:
+######################################################################
+
+(/) : jump to start of previous/next sentence
+{/} : jump to start of previous/next paragragh
+H/M/L : jump to top/middle/bottom of screen
+:jumps : view the jump list
+<C-o> : jump back
+<C-i> : jump forward
+gf : jump to the file name located under the cursor
+<C-w>f : open in a new window the file name located under the cursor
+<C-w>gf : open in a new tab the file name located under the cursor
+m{letter} : create a local mark at the current cursor position
+m{LETTER} : create a global mark at the current cursor position
+`{letter} : jump to mark
+gd : jump to first occurence of variable
+^] : jump to link under cursor in help pages
+
+
+######################################################################
+### CHANGE COMMANDS:
+######################################################################
+
+:changes : view change list
+g. : traverse backwards through the change list
+g; : traverse forward through the change list
+
+
+######################################################################
+### WINDOW COMMANDS:
+######################################################################
+
+<C-w>s : split a window horizontally
+<C-w>v : split a window vertically
+:sp[lit] {file] : split a window horizontally (and load file)
+:vsp[lit] {file} : split a window vertically (and load file)	
+<C-w><C-w> : cycle between open windows
+<C-w>h : focus the window to the left
+<C-w>j : focus the window below
+<C-w>k : focus the window above
+<C-w>l : focus the window to the right
+:clo[se] : close the active window
+<C-w>c : close the active window
+:on[ly] : Keey oply the active window, closing all others
+<C-w>o : Keep only the active window, closing all others
+
+
+:lcd {path} : Set the working directory for the current window
+:windo lcd {path} : Set the working directory for every window in a tab
+
+
+######################################################################
+### TAB COMMANDS:
+######################################################################
+
+:tabe[dit] {filename} : Open {filename} in a new tab
+<C-w>T : move current window into a new tab
+:tabc[lose] : close the current tab page and all its windows
+:tabo[only] : keep the active tab page, closing all others
+{N}gt : switch 	to tab page number {N}
+:tabmove [N] : move current tab to position N (0 for beginning)
+:tab all : load all files in argument list into tabs
+:tab ball : load all files in buffer list into tabs
+:tabnew | b{N} : open file in buffer N into new tab
+
+
+######################################################################
+### OPENING FILES:
+######################################################################
+
+:set path+={dir}/** : add all subdirectories to path
+:find {filename} : find filename in path
+:e. : open the directory (in view mode) of the current file
+:Sexplore : open the file explorer in horizontal split window
+:Vexplore : open the file explore in vertical split window
+<C-g> : echo name and status of current file
+
+
+######################################################################
+### MOTION COMMANDS:
+######################################################################
+
+gk : move up a display line
+gj : move down a display line
+^ : move to the first non-blank character of a real line
+g^ : move to the first non-blank character of a display line
+W : move to beginning of next WORD (sequence of non-blank characters)
+B : move to beginning of previous WORD
+m{a-zA-Z} : mark current cursor location with designed letter
+'{mark} : jump to line of mark
+`{mark} : jump to exact position of mark
+:marks : view complete list of marks
+:delmarks markid : delete mark
+`. : jump to location of last change
+`^ : jump to location of last insertion
+`` : jump to last jump
+
+
+######################################################################
+### REGISTER COMMANDS:
+######################################################################
+
+:reg : inspect content of registers
+:let @{register}={text} : assign text to register
+"{register}{command} : apply command to specified register
+"" : use the unnamed register
+"0 : use the yank register
+"_ : use the "black hole" reegister
+"+ : use the system clipboard
+"% : name of the current file
+". : last inserted text
+": : last Ex command
+"/ : last search pattern
+
+
+######################################################################
+### EDITTING COMMANDS:
+######################################################################
+
+:digraphs : look at digraphs list
+<C-k>digraph : insert digraph
+:abbr {abr} {expansion} : set abbrevation (useful for typos)
+<C-o> : quick-command mode
+<C-x>n : auto-complete (next in list)
+<C-x>p : auto-complete (prev in list)
+<C-x><C-f> : auto-complete file path
+<C-a> : increment integer under cursor
+<C-x> : decrement integer under cursor
+ga : show ASCII value of character under the cursor
+g<C-g> : show word count of file
+
+######################################################################
+### SEARCH COMMANDS:
+######################################################################
+
+? : seach backwards
+q/ : open search history
+:set ignorecase : make search patterns case insensitive
+:set smartcase : search is only case sensitive when there is upper-case letter
+:set nohls : disable search highlighting
+:nohlsearch : disable search highlighting temporarily
+/search pattern/e : place cursor at end of word which finding pattern
+\c : turns case sensitivity OFF for seach pattern
+\C : turns case sensitivity ON for search pattern
+\v : very magic switch, switches regex syntax to behave like Perl's
+\V : very literal switch, 
+\x : character class for hex characters
+\_s : matches white space or line breaks with very magic search enabled
+\w : matches word characters (letters, numbers, and _)
+\W : matches anything BUT word characters
+<> : word boundaries with very magic search enabled
+\zs, \ze : match delimiters
+gn : enable character-wise Visual mode and select next seach match
+<C-r><C-w> : autocompletes search using remainder of preview match
+<C-r>/ : pastes the contents of the last search register in place
+\1 : register first sub-match is saved to
+:%s///gn : count the number of matches
+:vimgrep //g % : second way to count number of matches
+:cnext, :cprev : scroll through counted matches (from vimgrep)
+
+
+######################################################################
+### SUBSTITUTE COMMANDS:
+######################################################################
+
+:[range]s[usbstitute]/{pattern}/{string}/[flags]
+flags:
+  g : change all matches within a line, not just the first one
+  c : give opportunity to confirm or reject each change
+  n : suppresses usual substitute behavior, reporting number of matches
+  & : reuses the same flags from the previous substitute command
+:s//\=@{reg} : replace search with value from reg
+g& : equivalent to :%s//~/&
+:&& : repeats the last substitute command reusing the same set of flags
+
+
+######################################################################
+### GLOBAL COMMANDS:
+######################################################################
+
+:[range] global[!]/{pattern}/[cmd]
+  NOTE: default range is %; using ! runs command on every non-matching line
+:g/{pattern}/[range][cmd] : alternative pattern for global command
+:g/{start}/.,{finish}[cmd] : equivalent to foregoing pattern
+:v/{pattern}/[cmd] : equivalent to :g!/{pattern}/[cmd]
+
+
+######################################################################
+### BINDING COMMANDS:
+######################################################################
+
+:map : for normal, insert, visual, and command-line modes
+:imap : for insert mode
+:cmap : for command-line mode
+:nmap : for normal mode
+:vmap : for visual mode
+
+
+######################################################################
+### MISC COMMANDS:
+######################################################################
+
+zf : define a fold
+:set statusline format : set format for status line
+:echo &somesetting : view the current setting
+:undolist : show undo branches
+g- : undo change by going back through undo tree
+:[vert] diffsplit filename : show file diffs
+:diffput : put changes from current file into alternate diff file
+
+
+######################################################################
+### TAG COMMANDS:
+######################################################################
+
+:set tags=/path/to/tags : set tags file
+^] : show list of matches for tag
+^t : return to starting tag
+:tselect : show list of matching tags
+
+
+######################################################################
+### SESSION COMMANDS:
+######################################################################
+
+:mksession FILE : save current session to FILE
+
+
+
+######################################################################
+### HELP:
+######################################################################
+
+:help ins-completion : help menu for auto-complete
+:help /character-classes : view preset charcter classes
+:help netrw-browse-maps : view commands for netrw
+:helpgrep pattern [@LANG] : search the help pages for the pattern
+
+
+######################################################################
+### EXAMPLES:
+######################################################################
+
+:%normal A; : append a semi-colon to the end of every line
+:%noraml i# : comment out every line
+:!python % : use python to run the current script
+:2,$!sort -t',' -k2 : sort a comma delimited table by the second field
+/\v<(\w+)\_s+\1> : matches duplicate consecutive words
+/Search \zscommands : sets cursor to commands part of match
+/\v"[^"]+" : match anything that is "quoted"
+:g/{/.+1,/}-1 sort : sort each block of CSS rules
+
+
+######################################################################
+### PLUGINS:
+######################################################################
+
+netrw : explore file directories and read/write files across a network
+matchit : jump between matching tags
+surround : add or substitute surrounding delimiters
+
+
+######################################################################
+### VIMRC:
+######################################################################
+
+source /path/to/external/file : source another file in .vimrc
