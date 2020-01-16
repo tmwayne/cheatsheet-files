@@ -1,0 +1,10 @@
+
+      ## Package building
+      Install project ..................... pip install .
+      Install project as editable ......... pip install -e .
+      Build package ....................... python3 setup.py sdist bdist_wheel
+
+      ## Documentation
+      Initial sphinx build ................ sphinx-quickstart docs
+      Build documentation ................. make html
+

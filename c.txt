@@ -1,0 +1,16 @@
+
+      ## Flags
+      Test coverage ....................... gcc -fprofile-args -ftest-coverage
+      
+      ## Linking
+      List C packages ..................... pkg-config --list-all
+
+      ## Debugging
+      Run debugger ........................ gdb <prog-name>
+
+      ## Profiling
+      Check for memory errors ............. valgrind <prog-name>
+
+      ## Testing
+      Check test coverage ................. gcov <prog-name>.gcda 
+
