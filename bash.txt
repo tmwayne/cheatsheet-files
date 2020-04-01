@@ -2,6 +2,7 @@
       ## File manipulation
       Create a tarball .................... tar -cvzf file.tar.gz file
       Extract a tarball ................... tar -xvzf file.tar.gz
+      Print contents of tarball ........... tar -tvf file.tar.gz
       Diff files in vim ................... vimdiff file1 file2
       Create soft symbolic link ........... ln -s file link
       Explain filesystem hierarchy ........ man hier
@@ -29,21 +30,37 @@
       List services listening to ports .... sudo netstat -plunt
       Capture packets being transferred ... tcpdump
       View visible interfaces ............. ip addr show
+      Show the IP routing table ........... route
+      Show NIC info ....................... ifconfig
 
       ## Services
       List all SysV services .............. service --status-all
       List all systemd services ........... systemctl list-units --type=service
       Display systemd log by executable ... systemctl /path/to/exc
 
+      ## Kernel
+      Print kernel ring buffer ............ dmesg
+
       ## Computer specs
       Print various hardware info ......... uname -a
       Show memory use ..................... free -h
-      Show disk usage ..................... du -sh
-      Show disk availability .............. df -h
       Show CPU specs ...................... cat /proc/cpuinfo
       Show memory specs ................... cat /proc/meminfo
       Show disk stats ..................... cat /proc/diskstats
+      Show devices ........................ cat /proc/devices
       Show other hardware info ............ dmidecode
+
+      ## Devices
+      List all filesystems ................ sudo lsblk --fs
+      Get device info ..................... udevadm info --query=all --name=<dev>
+      Watch device changes ................ udevadm monitor <args>
+      List partitions ..................... sudo fdisk --list
+      List partitions ..................... sudo parted -l
+      Print UUID for each partition ....... blkid
+      Print mounted filesystems ........... mount
+      Mount a filesystem .................. mount -t <type> <device> <mountpoint>
+      Show disk availability .............. df -h
+      Show disk usage ..................... du -sh
 
       ## SSH
       Create new key ...................... ssh-keygen -b 2048 -t rsa
@@ -53,5 +70,3 @@
       ## Misc
       Open last command in editor ......... fc
 
-      ## C
-      List C packages ..................... pkg-config --list-all

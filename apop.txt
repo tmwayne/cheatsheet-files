@@ -1,0 +1,7 @@
+
+      ## Database
+      Read text file to database .......... apop_text_to_db <args>
+      Merge databases ..................... apop_merge_dbs <args>
+      Plot query output with Gnuplot ...... apop_plot_query <args>
+      Produce crosstab of query ........... apop_db_to_crosstab <args>
+

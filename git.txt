@@ -1,0 +1,13 @@
+
+      ## Return state
+      Remove new files .................... git clean -df
+
+      ## Commits
+      Print commit hash ................... git rev-parse <branch>
+      Open diffs in editor ................ git difftool <commit1> <commit2>
+      Print file changes in diff .......... git diff --stat <commit1> <commit2>
+      Show who wrote which line of code ... git blame <file>
+      Search commit for string ............ git grep <string> <commit(s)>
+
+      ## Branches
+      Print remote branches ................ git branches -r

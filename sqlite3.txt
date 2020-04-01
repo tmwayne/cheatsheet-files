@@ -1,0 +1,4 @@
+
+      ## Table information
+      View table metadata ................. select * from sqlite_master ;
+

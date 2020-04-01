@@ -1,0 +1,8 @@
+
+      ## Tags
+      Close preview window ................ :pc
+      Open tag list for word under cursor . g]
+
+      ## Ex commands
+      Insert word under cursor ............ <c-r><c-w>
+

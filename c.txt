@@ -6,11 +6,14 @@
       List C packages ..................... pkg-config --list-all
 
       ## Debugging
-      Run debugger ........................ gdb <prog-name>
+      Run debugger ........................ gdb <prog>
+      Run only preprocesser ............... gcc -E <file>
+      Set memory debugging ................ export MALLOC_CHECK_=2
 
       ## Profiling
-      Check for memory errors ............. valgrind <prog-name>
+      Enable profiling .................... gcc -pg <file>; gprof <prog>
+      Check for memory errors ............. valgrind <prog>
 
       ## Testing
-      Check test coverage ................. gcov <prog-name>.gcda 
+      Check test coverage ................. gcov <prog>.gcda 
 
