@@ -1,0 +1,5 @@
+
+      ## Listing packages
+      List explicitly install packages .... pacman -Qe
+      List native packages ................ pacman -Qn
+
