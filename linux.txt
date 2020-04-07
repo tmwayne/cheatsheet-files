@@ -32,6 +32,7 @@
       View visible interfaces ............. ip addr show
       Show the IP routing table ........... route
       Show NIC info ....................... ifconfig
+      Lookup IP for DNS name .............. nslookup <DNS name>
 
       ## Services
       List all SysV services .............. service --status-all
@@ -49,6 +50,7 @@
       Show disk stats ..................... cat /proc/diskstats
       Show devices ........................ cat /proc/devices
       Show other hardware info ............ dmidecode
+      Print distro information ............ lsb_release -a
 
       ## Devices
       List all filesystems ................ sudo lsblk --fs
