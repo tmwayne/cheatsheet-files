@@ -1,50 +1,6 @@
 
-      ## File manipulation
-      Create a tarball .................... tar -cvzf file.tar.gz file
-      Extract a tarball ................... tar -xvzf file.tar.gz
-      Print contents of tarball ........... tar -tvf file.tar.gz
-      Diff files in vim ................... vimdiff file1 file2
-      Create soft symbolic link ........... ln -s file link
-      Explain filesystem hierarchy ........ man hier
-      Print file information .............. file <file>
-
-      ## Find files
-      Search man pages for pattern ........ apropos <pattern>
-      Find binaries in path ............... which <package>
-      Find a package outside of path ...... whereis <package>
-      Find file using filesystem index .... locate <filename>
-
-      ## Package management
-      Uninstall a package completely ...... sudo apt-get purge <package>
-      List installed packages ............. apt list --installed
-
-      ## Processes
-      List running jobs ................... ps -auxf
-      Disassociate job from terminal ...... nohup command &>/dev/null &
-      System trace a program .............. strace <proc>
-      Edit crontab ........................ crontab -e
-      Print crontab to console ............ crontab -l
-
-      ## Networking
-      IPv4 ports .......................... lsof -Pnl +m -i4
-      List services listening to ports .... sudo netstat -plunt
-      Capture packets being transferred ... tcpdump
-      View visible interfaces ............. ip addr show
-      Show the IP routing table ........... route
-      Show NIC info ....................... ifconfig
-      Lookup IP for DNS name .............. nslookup <DNS name>
-
-      ## Services
-      List all SysV services .............. service --status-all
-      List all systemd services ........... systemctl list-units --type=service
-      Display systemd log by executable ... systemctl /path/to/exc
-
-      ## Kernel
-      Print kernel ring buffer ............ dmesg
-
       ## Computer specs
       Print various hardware info ......... uname -a
-      Show memory use ..................... free -h
       Show CPU specs ...................... cat /proc/cpuinfo
       Show memory specs ................... cat /proc/meminfo
       Show disk stats ..................... cat /proc/diskstats
@@ -52,23 +8,78 @@
       Show other hardware info ............ dmidecode
       Print distro information ............ lsb_release -a
 
-      ## Devices
-      List all filesystems ................ sudo lsblk --fs
+      ## Device specs
       Get device info ..................... udevadm info --query=all --name=<dev>
-      Watch device changes ................ udevadm monitor <args>
-      List partitions ..................... sudo fdisk --list
-      List partitions ..................... sudo parted -l
+      List partitions ..................... fdisk --list
+      List partitions ..................... parted -l
       Print UUID for each partition ....... blkid
-      Print mounted filesystems ........... mount
+      List all filesystems ................ lsblk --fs
+      Watch device changes ................ udevadm monitor <args>
       Mount a filesystem .................. mount -t <type> <device> <mountpoint>
-      Show disk availability .............. df -h
-      Show disk usage ..................... du -sh
+      Print mounted filesystems ........... mount
 
-      ## SSH
+      ## Init, Services, and Scheduling
+      List all SysV services .............. service --status-all
+      List all systemd services ........... systemctl --type=service
+      Display systemd log by executable ... systemctl /path/to/exc
+      Edit crontab ........................ crontab -e
+      Print crontab to console ............ crontab -l
+
+      ## Resource Monitoring
+      Show memory use ..................... free -h
+      Show disk availability .............. df -h
+      Show file size ...................... du -sh
+      List running jobs ................... ps -auxf
+      List uptime and load averages ....... uptime
+      List IO information ................. iostat
+      Open top for IO ..................... iotop
+      Monitor a specific process .......... pidstat
+      List domain sockets in use .......... lsof -U
+
+      ## Networking
+      IPv4 ports .......................... lsof -Pnl +m -i4
+      List ports used or listened to ...... lsof -i
+      List ports used by program .......... lsof -i:<port>
+      Print open TCP connections .......... netstat -nt
+      List services listening to ports .... netstat -ntl
+      Capture packets being transferred ... tcpdump
+      View visible interfaces ............. ip addr show
+      Show the IP routing table ........... route
+      Show NIC info ....................... ifconfig (also ip link)
+      Lookup IP for DNS name .............. nslookup <DNS name>
+      Create TCP connection ............... telnet <host> <port>
+      Create TCP/UDP connection ........... nc <host> <port>
+      Save HTTP interaction to file ....... curl --trace-ascii <file> <url>
       Create new key ...................... ssh-keygen -b 2048 -t rsa
       Add key to agent .................... ssh-add <key>
       Copy public key to vm ............... ssh-copy-id user@remote
+      Print packet path to host ........... traceroute (also tracepath)
+      Print info on wirless connection .... iw dev <int> link
 
-      ## Misc
+      ## File Management
+      Create a tarball .................... tar -cvzf file.tar.gz <file>
+      Extract a tarball ................... tar -xvzf file.tar.gz
+      Print contents of tarball ........... tar -tvf file.tar.gz
+      Diff files in vim ................... vimdiff <file1> <file2>
+      Create soft symbolic link ........... ln -s <file> <link>
+      Explain filesystem hierarchy ........ man hier
+      Print file information .............. file <file>
       Open last command in editor ......... fc
+
+      ## Package Management
+      Search man pages for pattern ........ apropos <pattern>
+      Find binaries in path ............... which <cmd>
+      Find a package outside of path ...... whereis <cmd>
+      Find file using filesystem index .... locate <file>
+      Uninstall a package completely ...... sudo apt-get purge <package>
+      List installed packages ............. apt list --installed
+
+      ## Process Management
+      List the files processes use ........ lsof
+      System trace a program .............. strace <cmd>
+      List library calls of a program ..... ltrace <cmd>
+      Disassociate job from terminal ...... nohup command &>/dev/null &
+
+      ## Log Management
+      Print kernel ring buffer ............ dmesg
 

@@ -3,3 +3,6 @@
       List explicitly install packages .... pacman -Qe
       List native packages ................ pacman -Qn
 
+      ## Upgrade
+      Full system upgrade ................. pacman -Syu
+

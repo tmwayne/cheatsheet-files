@@ -2,8 +2,12 @@
       ## Flags
       Test coverage ....................... gcc -fprofile-args -ftest-coverage
       
-      ## Linking
+      ## Compiling
+      Run C preprocessor .................. gcc -E
       List C packages ..................... pkg-config --list-all
+      Search a library for a function ..... nm
+      List shared libraries used by prog .. ldd <prog>
+      Print build commands ................ make -n
 
       ## Debugging
       Run debugger ........................ gdb <prog>

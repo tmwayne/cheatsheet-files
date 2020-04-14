@@ -11,3 +11,6 @@
 
       ## Branches
       Print remote branches ................ git branches -r
+
+      ## Files
+      List files in index .................. git ls-files
