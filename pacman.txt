@@ -2,7 +2,12 @@
       ## Listing packages
       List explicitly install packages .... pacman -Qe
       List native packages ................ pacman -Qn
+      List sources containing package ..... pacman -Ss <pkg>
 
       ## Upgrade
       Full system upgrade ................. pacman -Syu
+
+      ## Cleaning
+      Remove unused packages .............. pacman -Rns $(pacman -Qtdq)
+
 
