@@ -21,6 +21,7 @@
       ## Init, Services, and Scheduling
       List all SysV services .............. service --status-all
       List all systemd services ........... systemctl --type=service
+      List timers ......................... systemctl list-timers --all
       Display systemd log by executable ... systemctl /path/to/exc
       Edit crontab ........................ crontab -e
       Print crontab to console ............ crontab -l
@@ -55,6 +56,7 @@
       Copy public key to vm ............... ssh-copy-id user@remote
       Print packet path to host ........... traceroute (also tracepath)
       Print info on wirless connection .... iw dev <int> link
+      List available wifi networks ........ nmcli device wifi list
 
       ## File Management
       Create a tarball .................... tar -cvzf file.tar.gz <file>
@@ -78,7 +80,8 @@
       List the files processes use ........ lsof
       System trace a program .............. strace <cmd>
       List library calls of a program ..... ltrace <cmd>
-      Disassociate job from terminal ...... nohup command &>/dev/null &
+      Disassociate job from terminal ...... nohup <cmd> &>/dev/null &
+      Sudo without switching homes ........ sudo -E <cmd>
 
       ## Log Management
       Print kernel ring buffer ............ dmesg
