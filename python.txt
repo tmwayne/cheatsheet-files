@@ -21,4 +21,9 @@
       Run coverage with pytest ............ pytest --cov=src
       Run coverage report ................. coverage run --source <s> -m pytest
 
- 
+      ## Profiling
+      Profile script ...................... python -m cProfile -o <out> <script>
+      Print stats from cProfile ........... echo stats | python -m pstats <out>
+
+      ## Random
+      Tokenize a python file .............. python -m tokenize -e <file>

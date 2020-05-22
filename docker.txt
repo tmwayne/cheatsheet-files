@@ -21,6 +21,6 @@
       Kill all containers ................. docker kill $(docker ps -q)
       List dangling volumes ............... docker volume ls -qf dangling=true
       Remove volume ....................... docker volume rm
-      Remove unused containers, etc ....... docker system prune
+      Remove unused containers, etc ....... docker system prune -a -f
       Remove dangling images .............. docker image prune
 

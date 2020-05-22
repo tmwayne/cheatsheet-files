@@ -1,13 +1,26 @@
 
       ## Inspection
+      Print info about stack .............. info stack
       Print all locals .................... info locals
+      Print all arguments ................. info args
+      Print all threads ................... info threads
+      Print macro defintion ............... info macro <macro>
       Print first n elements of array ..... print *<array>@<n>
-      Set gdb variable .................... set $<var> = <exp>
+      Print using format .................. print/<fmt> <expr>
+      Set gdb variable .................... set $<var> = <expr>
+      Get backtrace ....................... backtrace
+      Print variable after changes......... display <var>
+      Expand Macro ........................ macro expand <macro>
+      Open source window .................. tui enable
+      Search source file .................. search <regex>
+      Print assembly code ................. disassemble /m
+      Print type of variable .............. ptype <var>
 
       ## Breaking
       Add breakpoint ...................... break <function>
       Add file breakpoint ................. break <file>.c:<line>
       Add conditional breakpoint .......... break <line> if <condition>
+      Set watchpoint ...................... watch <expr>
 
       ## Running the program
       Run the next line ................... step
@@ -20,4 +33,8 @@
       Exit frame .......................... return
       Show location in stack .............. where
       Show current frame .................. frame
+
+      ## Editing
+      Edit the file ....................... edit
+      Adjust a variable ................... print <var>=<expr>
 

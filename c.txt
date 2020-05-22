@@ -5,17 +5,28 @@
       ## Compiling
       Run C preprocessor .................. gcc -E
       List C packages ..................... pkg-config --list-all
-      Search a library for a function ..... nm
-      List shared libraries used by prog .. ldd <prog>
       Print build commands ................ make -n
 
+      ## Inspection
+      List symbol table ................... nm <prog>
+      Show assembly code .................. objdump -t <prog>
+      Dissect object files ................ readelf -s <prog>
+      List shared libraries ............... ldd <prog>
+      List dll loading .................... LD_DEBUG=libs <prog>
+
       ## Debugging
-      Run debugger ........................ gdb <prog>
       Run only preprocesser ............... gcc -E <file>
+      Run debugger ........................ gdb <prog>
       Set memory debugging ................ export MALLOC_CHECK_=2
 
-      ## Profiling
-      Enable profiling .................... gcc -pg <file>; gprof <prog>
+      ## Gprof
+      Enable profiling .................... gcc -pg <file> && ./<prog>
+      Create profile ...................... gprof <prog> gmon.out
+      Suppress explanations ............... gprof -b <prog> gmon.out
+      Print only flat profile ............. gprof -p <prog> gmon.out
+      Print only call graphs .............. gprof -q <prog> gmon.out
+
+      ## Other profiling
       Check for memory errors ............. valgrind <prog>
 
       ## Testing

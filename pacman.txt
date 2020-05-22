@@ -10,4 +10,3 @@
       ## Cleaning
       Remove unused packages .............. pacman -Rns $(pacman -Qtdq)
 
-
